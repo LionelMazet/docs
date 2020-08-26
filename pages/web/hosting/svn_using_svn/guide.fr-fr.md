@@ -8,6 +8,17 @@ section: FTP et SSH
 
 Subversion (en abrégé svn) est un système de gestion de versions. La suite du guide suppose que vous êtes connecté en ssh à la racine de votre hébergement.
 
+
+> [!Proposition de Modification 08/2020]
+>
+> Suite à la mise à jour des serveurs mutualisation, il apparait que les clés DSA ne sont plus reconnues par le serveur SSH et que le fichier des clés autorisées se nomme maintenant 'authorized_keys' mais plus 'authorized_keys2'. 
+> Proposition de modification : 
+> - au lieu de créer des paires de clés DSA, il faut créer des clés modernes. Exemple validé : ED25519
+> - lors de l'"ajout de la clé publique sur l'hébergement" dans le fichier .ssh/authorized_keys, remplacer "ssh-dsa" par "ssh-ed25519" suivi de la clé publique
+> - vérifier que le nom du homez n'a pas changé. Modifier en conséquence la commande "...root=/home.XXX/loginFTP/svn..."
+> Autre proposition pour simplifier l'édition de texte : il est possible d'éditer les fichiers (ainsi que le CHMOD) via l'outil "https://net2ftp.clusterXXX.hosting.ovh.net/index.php" 
+>
+
 > [!warning]
 >
 > OVH met à votre disposition des services dont la configuration, la gestion et la responsabilité vous incombent. Il vous revient de ce fait d'en assurer le bon fonctionnement.
